@@ -1,0 +1,109 @@
+\documentclass{scrreprt}[english]
+
+\usepackage[english]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx} % Required for inserting images
+\usepackage{caption}  % Pour personnaliser les légendes
+\usepackage{subcaption} % Pour des sous-légendes
+\usepackage{subfiles}
+\usepackage{color}		%pour la couleur dans le code
+%\usepackage{titlesec}
+\usepackage{listings}
+\usepackage{float}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage[a4paper,top=2cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
+%\usepackage{fancyhdr}
+\usepackage{enumitem}
+\usepackage[unicode=true,pdfusetitle,  bookmarks=true,bookmarksnumbered=false,bookmarksopen=false,         breaklinks=false,pdfborder={0 0 0},pdfborderstyle={},backref=false,colorlinks=true]{hyperref}
+\hypersetup{urlcolor=blue , linkcolor=blue}
+
+%\pagestyle{fancy}
+\definecolor{INSA_BLEU}{cmyk}{1,0.9,0.1,0}
+\definecolor{rouge_fonce}{rgb}{1,0.1,0.1}
+
+\usepackage{tcolorbox,listings}
+\usepackage{fullpage}
+ 
+\definecolor{yellowfound}{rgb}{0.95,0.95,0.92}
+ 
+\lstset{
+    backgroundcolor=\color{yellowfound},
+    breakatwhitespace=false,
+    breaklines=true,
+    captionpos=b,
+    commentstyle=\color{red},
+    deletekeywords={...},
+    escapeinside={\%*}{*)},
+    extendedchars=true,
+    keepspaces=true,
+    keywordstyle=\color{blue},
+    language=fortran,
+    morekeywords={*,...},
+    showspaces=false,
+    showstringspaces=false,
+    showtabs=false,
+    stepnumber=1,
+    stringstyle=\color{gray},
+    tabsize=4,
+    title=\lstname,
+}
+ 
+\lstdefinestyle{frameStyle}{
+    basicstyle=\footnotesize,
+    numbers=left,
+    numbersep=20pt,
+    numberstyle=\tiny\color{black}
+}
+ 
+\tcbuselibrary{listings,skins,breakable}
+ 
+\newtcblisting{customFrame}{
+    arc=0mm,
+    top=0mm,
+    bottom=0mm,
+    left=3mm,
+    right=0mm,
+    width=\textwidth,
+    listing only,
+    listing options={style=frameStyle},
+    breakable
+}
+
+
+\setlength{\parindent}{0.7cm}
+\setlength{\parskip}{1ex plus 0.5ex minus 0.2ex}
+\newcommand{\hsp}{\hspace{20pt}}
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+
+\renewcommand\thesection{\Roman{section}}
+\renewcommand\thesubsection{~~~\alph{subsection}}
+
+
+\author{Amandine BURCON}
+
+
+\begin{document}
+
+\subfile{0_page_presentation}
+
+\newpage
+\addtocontents{toc}{~\hfill\textbf{Page}\par}
+\tableofcontents
+
+\chapter{Introduction}
+\subfile{1_intro}
+
+\chapter{Distances to k nearest neighbors}
+\subfile{2_calculsdivers}
+
+\chapter{Methods}
+\subfile{3_methodes}
+
+\chapter{Upgrades}
+\subfile{4_ameliorations}
+
+%\subfile{5_conclusion}
+
+
+\end{document}

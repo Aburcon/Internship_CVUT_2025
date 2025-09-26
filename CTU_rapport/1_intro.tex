@@ -1,0 +1,20 @@
+\documentclass[main.tex]{subfiles}
+\begin{document}
+
+Mobile network stations have a different coverage area depending on many factors such as the technology they use (2G/3G/4G/5G) or where they are (city/countryside/mountain...). But we need to be in the coverage area of a station anywhere. This means that these areas are connected and overlapping sometimes. Two stations whose coverage areas overlap are considered neighboring base stations. The goal of this internship is to predict these neighboring relations between base stations, with only their coordinates. 
+
+The work already done uses certain methods to do that, in particular using a distance threshold between 2 stations. It also detects cities using the density of stations, and modifies this distance threshold accordingly. Our goal will be to detect important roads and railroads using the positions of the base stations. Indeed, base stations that follow each other alongside a road will automatically be considered neighbors, as the coverage of a road is always continuous.
+
+We will mostly use only Orange base stations, as they are enough to detect the roads and it reduces execution time. 
+% Ajouter infos sur base de données pour le rapport (plusieurs opérateurs, etc)
+
+\subsection*{Code}
+
+The python codes created this summer are regrouped in different notebooks, as well as one python script (\texttt{road\_utils.py}) containing every function allowing to re-use them elsewhere. 
+
+% Voire si j'ajoute les fnctions dans un notebook pour + organisé
+
+The distances are always in meters, unless said otherwise.
+
+
+\end{document}
